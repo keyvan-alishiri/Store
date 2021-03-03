@@ -1,5 +1,8 @@
 
 
+using API.Helpers;
+using Core.Interfaces;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +34,8 @@ namespace API
         {
 
             services.AddScoped<Core.Interfaces.IProductRepository, Infrastructure.Data.ProductRepository>();
-
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
 
             services.AddDbContext<Infrastructure.Data.StoreContext>(x =>
@@ -50,6 +54,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
