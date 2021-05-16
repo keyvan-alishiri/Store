@@ -7,24 +7,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+
+
+
 // Datepicker module
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CoreModule } from './core/core.module';
+import { ShopModule } from './shop/shop.module';
+import { from } from 'rxjs';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
+    ShopModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
