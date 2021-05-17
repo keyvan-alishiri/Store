@@ -17,6 +17,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CoreModule } from './core/core.module';
 import { ShopModule } from './shop/shop.module';
 import { from } from 'rxjs';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { from } from 'rxjs';
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     CoreModule,
-    ShopModule,
+    HomeModule,
 
 
   ],
