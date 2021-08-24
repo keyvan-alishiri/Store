@@ -12,7 +12,7 @@ namespace API.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
+
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.0");
 
@@ -29,7 +29,7 @@ namespace API.Migrations
 
                     b.ToTable("Products");
                 });
-#pragma warning restore 612, 618
+
         }
     }
 }
