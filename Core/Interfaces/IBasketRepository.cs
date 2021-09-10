@@ -1,8 +1,8 @@
-using System.Reflection.Metadata;
+
 using System.Threading.Tasks;
 using Core.Entities;
 
-namespace Infrastructure
+namespace Core.Interfaces
 {
     public interface IBasketRepository
     {
