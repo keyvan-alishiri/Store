@@ -45,7 +45,7 @@ namespace API.Controllers
             var user = await _userManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
             return new UserDto
             {
-                DispalyName = user.DispalyName,
+                DisplayName = user.DispalyName,
                 Token = _tokenService.CreateToken(user),
                 Email = user.Email
             };
@@ -96,7 +96,7 @@ namespace API.Controllers
             {
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),
-                DispalyName = user.DispalyName,
+                DisplayName = user.DispalyName,
             };
 
         }
@@ -119,7 +119,7 @@ namespace API.Controllers
             if (!result.Succeeded) return BadRequest(new ApiResponse(400));
             return new UserDto
             {
-                DispalyName = user.DispalyName,
+                DisplayName = user.DispalyName,
                 Token = _tokenService.CreateToken(user),
                 Email = user.Email
             };
